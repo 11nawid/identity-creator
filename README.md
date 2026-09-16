@@ -27,20 +27,19 @@ When building apps, you often need realistic test data. Identity Creator generat
 
 ## Screenshots
 
-### Create Page — Quick Presets & Controls
-![Create Page](docs/screenshots/create-page.png)
-
-### Identities — Browse & Manage Generated Profiles
-![Identities Page](docs/screenshots/identities-page.png)
-
-### Identity Detail — Personal Information
-![Identity Detail - Personal](docs/screenshots/identity-detail-personal.png)
-
-### Identity Detail — Location & Map Data
-![Identity Detail - Location](docs/screenshots/identity-detail-location.png)
-
-### Temporary Inbox — Disposable Email via Mail.tm
-![Inbox - Temporary Mail](docs/screenshots/inbox-temp-mail.png)
+<table>
+  <tr>
+    <td><img src="docs/screenshots/create-page.png" width="100%"></td>
+    <td><img src="docs/screenshots/identities-page.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/identity-detail-personal.png" width="100%"></td>
+    <td><img src="docs/screenshots/identity-detail-location.png" width="100%"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/screenshots/inbox-temp-mail.png" width="100%"></td>
+  </tr>
+</table>
 
 ---
 
