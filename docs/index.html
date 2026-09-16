@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identity Creator — Synthetic Profile Generator</title>
+  <meta name="description" content="Free, open-source synthetic identity generator for testing, prototyping, and development. Works offline with optional AI enhancement.">
+  <meta name="keywords" content="identity generator, synthetic data, fake profile, test data, mock data, development tools, open source">
+  <meta name="author" content="11nawid">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Identity Creator — Synthetic Profile Generator">
+  <meta property="og:description" content="Free, open-source synthetic identity generator for testing, prototyping, and development. Works offline with optional AI enhancement.">
+  <meta property="og:url" content="https://11nawid.github.io/identity-creator/">
+  <meta property="og:image" content="https://identity-creator-sigma.vercel.app/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Identity Creator — Synthetic Profile Generator">
+  <meta name="twitter:description" content="Free, open-source synthetic identity generator for testing, prototyping, and development.">
+  <meta name="twitter:creator" content="@11nawid">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --fg: #ededed;
+      --surface: #171717;
+      --border: #262626;
+      --muted: #737373;
+      --accent: #ededed;
+      --accent-fg: #0a0a0a;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+      padding: 3rem 1.5rem;
+      flex: 1;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .logo {
+      width: 56px;
+      height: 56px;
+      background: var(--fg);
+      color: var(--bg);
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--accent-fg);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: scale(0.98);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--fg);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--muted);
+    }
+
+    .features {
+      margin-bottom: 3rem;
+    }
+
+    .features h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .feature-card h3 {
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.375rem;
+    }
+
+    .feature-card p {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .screenshots {
+      margin-bottom: 3rem;
+    }
+
+    .screenshots h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .screenshot-grid img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .tech {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .tech h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .tech-badges {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.375rem 0.75rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.8125rem;
+    }
+
+    .footer a {
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      h1 { font-size: 1.5rem; }
+      .buttons { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="logo">&#x1F464;</div>
+      <h1>Identity Creator</h1>
+      <p class="tagline">Free, open-source synthetic identity generator for testing, prototyping, and development.</p>
+      <div class="buttons">
+        <a href="https://identity-creator-sigma.vercel.app" class="btn btn-primary" target="_blank" rel="noopener">
+          Launch App &rarr;
+        </a>
+        <a href="https://github.com/11nawid/identity-creator" class="btn btn-secondary" target="_blank" rel="noopener">
+          View on GitHub
+        </a>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Offline-First</h3>
+          <p>Works without any API key. Uses bundled data banks for names, professions, and locations.</p>
+        </div>
+        <div class="feature-card">
+          <h3>AI-Enhanced</h3>
+          <p>Optional Gemini integration for richer biographies and profile details.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Batch Generation</h3>
+          <p>Create 5, 10, 25, or 50 identities at once with quick presets.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Complete Profiles</h3>
+          <p>Personal, location, career, finance, physical, digital, lifestyle, and IDs.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Temporary Email</h3>
+          <p>Disposable inbox via Mail.tm for each generated identity.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Export Anywhere</h3>
+          <p>JSON, CSV, TXT, or PDF. Copy any section to clipboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshots">
+      <h2>Preview</h2>
+      <div class="screenshot-grid">
+        <img src="https://raw.githubusercontent.com/11nawid/identity-creator/main/docs/screenshots/create-page.png" alt="Create Page" loading="lazy">
+        <img src="https://raw.githubusercontent.com/11nawid/identity-creator/main/docs/screenshots/identity-detail-personal.png" alt="Identity Detail" loading="lazy">
+        <img src="https://raw.githubusercontent.com/11nawid/identity-creator/main/docs/screenshots/identity-detail-location.png" alt="Location Details" loading="lazy">
+        <img src="https://raw.githubusercontent.com/11nawid/identity-creator/main/docs/screenshots/inbox-temp-mail.png" alt="Temporary Inbox" loading="lazy">
+      </div>
+    </section>
+
+    <section class="tech">
+      <h2>Built With</h2>
+      <div class="tech-badges">
+        <span class="badge">Next.js 16</span>
+        <span class="badge">React 19</span>
+        <span class="badge">TypeScript 5</span>
+        <span class="badge">Tailwind CSS 4</span>
+        <span class="badge">Framer Motion</span>
+        <span class="badge">MIT License</span>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>
+      <a href="https://identity-creator-sigma.vercel.app">Live App</a> &middot;
+      <a href="https://github.com/11nawid/identity-creator">GitHub</a> &middot;
+      <a href="https://identity-creator-sigma.vercel.app/privacy">Privacy</a> &middot;
+      <a href="https://identity-creator-sigma.vercel.app/terms">Terms</a>
+    </p>
+    <p style="margin-top: 0.5rem;">Made with care by <a href="https://github.com/11nawid">11nawid</a></p>
+  </footer>
+</body>
+</html>

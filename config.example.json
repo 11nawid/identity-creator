@@ -1,0 +1,15 @@
+{
+  "api_key": null,
+  "api_model": "gemini-3.7-flash",
+  "retry_attempts": 3,
+  "retry_delay_sec": 2,
+  "request_timeout_sec": 60,
+  "gemini_bl": "boq_assistant-bard-web-server_20260716.08_p0",
+  "auth_user": null,
+  "xsrf_token": null,
+  "default_model": "gemini-3.6-flash",
+  "cookie_file": null,
+  "proxy": null,
+  "log_requests": false,
+  "temporary_chats": false
+}
