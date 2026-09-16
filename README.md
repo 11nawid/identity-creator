@@ -9,6 +9,10 @@
 [![React](https://img.shields.io/badge/React-19-61DAFB)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
+<a href="https://identity-creator-sigma.vercel.app">
+  <img src="https://img.shields.io/badge/%E2%9C%A8%20Try%20Live%20Demo-black?style=for-the-badge&logo=vercel&logoColor=white" alt="Try Live Demo">
+</a>
+
 Generate realistic, fully-formed fictional identities complete with names, addresses, careers, financial details, platform usernames, temporary email, and more — all running locally in your browser with zero data collection.
 
 [Getting Started](#getting-started) | [Features](#features) | [Screenshots](#screenshots) | [Contributing](#contributing) | [Privacy](PRIVACY.md)
